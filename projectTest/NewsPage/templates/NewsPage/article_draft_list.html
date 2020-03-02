@@ -1,0 +1,17 @@
+{% extends 'NewsPage/base.html' %}
+
+{% block title %}Drafts{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for article in articles %}
+            <li>
+                <div class="article">
+                    <h1><a href="{% url 'article_detail' pk=article.pk %}">{{ article.title }}</a></h1>
+                    <p>{{ article.content|truncatechars:200 }}</p>
+                    <p class="date">Created: {{ article.created_at }}</p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

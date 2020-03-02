@@ -1,0 +1,11 @@
+{% extends 'NewsPage/base.html' %}
+
+{% block title %}Article edit{% endblock %}
+
+{% block content %}
+    <h2>New Article</h2>
+    <form method="POST" class="article-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
